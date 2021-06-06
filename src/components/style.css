@@ -1,0 +1,15 @@
+@import url('https://fonts.google.com/specimen/Nunito+Sans');
+.header{
+   
+    padding-left: 3%;
+    padding-right: 2%;
+    font-family: "Nunito+Sans";
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+.darkmode{
+    display: flex;
+    flex-direction: row;
+}
