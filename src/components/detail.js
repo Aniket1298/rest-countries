@@ -25,7 +25,7 @@ export default function Detail(props){
         });
     },[])
     return(
-        <div className="Detail">
+<div className="Detail">
             <div className="back" >
                 <button type="button" class="btn" style={{ color:props.mode=="light"?"black":"white", backgroundColor:props.mode=="light"?color.lightitem:color.darkitem}} onClick={()=> props.changecountry(false)}>
                     <div>
