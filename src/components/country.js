@@ -15,7 +15,7 @@ function Item(props){
 }
 export default function Country(props){
     return(
-        <div className="Country" onClick={()=> props.changecountry(props.name)} style={{ width:"500px",backgroundColor:props.mode=="dark"?color.darkitem:"white"}}>
+        <div className="Country" onClick={()=> props.changecountry(props.name)} style={{ width:"200px",backgroundColor:props.mode=="dark"?color.darkitem:"white",height:"350px"}}>
             <img src={props.flag} style={{width:"100%",height:"40%",objectFit:"cover"}}/>
             <div className="detail">
                 <h style={{fontSize:"120%",fontWeight:"800",marginBottom:"-20px",color:props.mode=="light"? "black":"white"}}>{props.name}</h>

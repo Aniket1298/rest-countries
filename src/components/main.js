@@ -28,24 +28,29 @@ export default function Main(props){
         //setTheme("hsl(207, 26%, 17%)")
         fetch(url).then(response => response.text().then(text => setData(JSON.parse(text))))
         setFiltered(data)
+      
          
     },[])
     //
+    function setAll(){
+        setFiltered(data)
+    }
     function filterByName(name){
+        name=name.toLowerCase()
         if(name){
-            setFiltered(data.filter(item => item.name=name))
+            setFiltered(data.filter(item => item.name.toLowerCase().includes(name)))
         }
     }
     function filterByRegion(region){
         console.log("region is",region)
         if(region){
             setFiltered(data.filter(item => item.region==region))
-           
         }
     }
-   
+    console.log("filter",filtered.length)
+    
     const dropmenu = regions.map((name) => <a className="dropdown-item" onClick={()=>filterByRegion(name)}>{name}</a>)
-    const alldata = filtered.map((d) => <Country name={d.name} region ={d.region} population ={""+d.population} flag={d.flag} capital={d.capital} changecountry={changecountry} mode={props.mode}/>)
+    const alldata = (filtered.length==0?data:filtered).map((d) => <Country name={d.name} region ={d.region} population ={""+d.population} flag={d.flag} capital={d.capital} changecountry={changecountry} mode={props.mode}/>)
     return(
         <div className="mainpage">
              <div style={{paddingLeft: "3%",color:"hsl(0, 0%, 98%)", display:country? "none":""}}>
@@ -54,14 +59,14 @@ export default function Main(props){
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
             </svg>
-                <input className="search-input" placeholder="Search for a country" style={{outline:"none", backgroundColor:props.mode=="light"?color.lightitem:color.darkitem,color:props.mode=="light"?"black":"white"}} ></input>
+                <input className="search-input" placeholder="Search for a country" style={{outline:"none", backgroundColor:props.mode=="light"?color.lightitem:color.darkitem,color:props.mode=="light"?"black":"white"}} onChange={(e)=> filterByName(e.target.value)} ></input>
             </div>
             <div class="dropdown" >
             <button className="btn btn-secondary dropdown-toggle" style={{outline:"none",backgroundColor:(props.mode=="light") ? color.lightitem:color.darkitem,color:(props.mode=="dark"?  "white": "black"),borderColor:"white"}}  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 filter by region
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-
+            <a className="dropdown-item" onClick={()=>setAll()}>All</a>
                 {dropmenu}
             </div>
             </div>
