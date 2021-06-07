@@ -40,17 +40,17 @@ Users should be able to:
 ### Screenshots
 #### Main Page light mode
 
-![Screenshot](./screenshot1.png)
+![Screenshot](screenshot1.PNG)
 ### Main page dark mode
 
 ![Screenshot](screeenshot2.PNG)
 
 ### Detail Page Light Mode
-![Screenshot](./screenshot3.png)
+![Screenshot](screenshot3.PNG)
 
 ### Detail Page Dark Mode
 
-![Screenshot](./screenshot4.png)
+![Screenshot](screenshot4.PNG)
 
 ### Mobile view light mode
 ![Screenshot](screeenshot5.PNG)
@@ -61,7 +61,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: (https://github.com/Aniket1298/rest-countries/)(https://github.com/Aniket1298/rest-countries/)
+- Solution URL: [https://github.com/Aniket1298/rest-countries/](https://github.com/Aniket1298/rest-countries/)
 - Live Site URL: [https://60bde032f107116f7c10d1c0--worldfrontend.netlify.app/](https://60bde032f107116f7c10d1c0--worldfrontend.netlify.app/)
 
 ## My process
