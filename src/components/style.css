@@ -7,9 +7,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    height: 60px;
+    padding-top: 10px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.1);
 }
 .darkmode{
     display: flex;
     flex-direction: row;
+    align-items: baseline;
 }

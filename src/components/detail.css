@@ -1,0 +1,12 @@
+.Detail{
+    margin-top: 2%;
+    margin-left: 100px;
+    margin-right: 3%;
+}
+.country{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2%;
+    width: 100%;
+}
