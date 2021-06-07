@@ -61,8 +61,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://github.com/Aniket1298/rest-countries/](https://your-solution-url.com)
-- Live Site URL: [https://60bde032f107116f7c10d1c0--worldfrontend.netlify.app/](https://your-live-site-url.com)
+- Solution URL: (https://github.com/Aniket1298/rest-countries/)(https://github.com/Aniket1298/rest-countries/)
+- Live Site URL: [https://60bde032f107116f7c10d1c0--worldfrontend.netlify.app/](https://60bde032f107116f7c10d1c0--worldfrontend.netlify.app/)
 
 ## My process
 
