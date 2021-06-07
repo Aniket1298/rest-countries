@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react"
+import React, {  useState } from "react"
 import "./style.css"
-import moon from '../design/moon.svg'
 import color from './colors'
 function Modeicon(props){
     if (props.mode=="light"){
@@ -18,7 +17,7 @@ function Modeicon(props){
 }
 export default function Header(props){
     const [theme,setTheme] = useState(color.lightitem);
-    const [moon,setMoon] = useState()
+    
     function changetheme(){
         if(props.mode=="light"){
           setTheme(color.darkitem)
@@ -27,14 +26,22 @@ export default function Header(props){
       }
     return(
         <div className="header" style={{backgroundColor:theme}}>
-            <h4  style={{color: props.mode=="dark" ? "white":"black"}}>
+           
+            
+            <div className="header-text" style={{color: props.mode=="dark" ? "white":"black"}}>
                 Where in the world?
-            </h4>
-            <div className="darkmode" onClick={() => {props.changetheme();changetheme()}}>
-            <Modeicon mode={props.mode}/>
-                <h4 style={{color: props.mode=="dark" ? "white":"black"}}>
-                    Dark Mode
-                </h4>
+            </div>
+            <div className="darkmode">
+            
+            <a onClick={() => {props.changetheme();changetheme()}}>
+                <div className="header-text" style={{color: props.mode=="dark" ? "white":"black"}} >
+                <Modeicon mode={props.mode}/>
+                &nbsp;
+                Dark Mode
+
+                </div>
+            </a>
+                
             </div>
             
         </div>

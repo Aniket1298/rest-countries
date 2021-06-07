@@ -1,12 +1,47 @@
 .Detail{
     margin-top: 2%;
     margin-left: 100px;
-    margin-right: 3%;
+    
 }
 .country{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 2%;
+    margin-top: 2%; 
     width: 100%;
+}
+.details{
+    display: flex;
+    flex-direction: row;
+}
+.flag{
+    width: 50%;
+    height: 50%;
+}
+@media only screen and (max-width: 400px){
+    .details{
+        display: flex;
+        flex-direction: column;
+    }
+    .country{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 2%; 
+        width: 100%;
+    }
+    .Detail{
+        margin-top: 2%;
+        margin-left: 5%;
+        margin-right: 3%;
+    }
+    .flag{
+        width: 90%;
+        height: 30%;
+        margin-bottom: 5%;
+    }
+    .back{
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
 }

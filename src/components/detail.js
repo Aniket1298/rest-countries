@@ -16,20 +16,19 @@ function Item(props){
 export default function Detail(props){
     const [data, setData] = useState([])
     const [theme,setTheme]=useState("")
-    var borders=[]
+    const [borders,setBorders] = useState([])
     var url ="https://restcountries.eu/rest/v2/alpha/"
     useEffect(() => {
         props.borders.forEach(element => {
             console.log(url+element)
-            fetch(url+element).then(response => response.text().then(text => borders.push(JSON.parse(text))))
+            fetch(url+element).then(response => response.json().then(res => setBorders(borders => [...borders,res.name])))
         });
     },[])
-    console.log(borders)
+    console.log(borders,"borders")
     return(
         <div className="Detail">
             <div className="back" >
                 <button type="button" class="btn" style={{ color:props.mode=="light"?"black":"white", backgroundColor:props.mode=="light"?color.lightitem:color.darkitem}} onClick={()=> props.changecountry(false)}>
-                    
                     <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
@@ -38,10 +37,13 @@ export default function Detail(props){
                      </button>
             </div>
             <div className="country" >
-                <img src={props.flag} style={{width:"50%",height:"120%",objectFit:"cover"}}/>
+                <div className="flag">
+                    <img src={props.flag} style={{width:"100%",height:"100%",objectFit:"cover"}}/>
+                
+                </div>
                 <div className="detail-section">
                     <h2 style={{color:props.mode=="dark"?"white":"black"}}>{props.name}</h2>
-                    <div style={{display:"flex",flexDirection:"row"}}>
+                    <div className="details">
                         <div className="row1">
                         <Item tag={"Native Name"} value={props.nativeName} mode={props.mode}/>
                         <Item tag={"Population"} value={props.population} mode={props.mode} />
@@ -63,7 +65,9 @@ export default function Detail(props){
                     </div>
                     <div className="bordercountries">
                         <p style={{color: props.mode=="dark"?color.lightitem:color.darkitem}}>
-                            Border Countries
+                            Border Countries :{
+                                borders.map((name)=> <button type="button" class="btn btn-sm" style={{marginRight:"4px", color:props.mode=="light"?"black":"white", backgroundColor:props.mode=="light"?color.lightitem:color.darkitem}} >{name}</button>)
+                            }
                         </p>
                         <div>
 
