@@ -62,7 +62,7 @@ export default function Main(props){
         <div className="mainpage">
              <div style={{paddingLeft: "3%",color:"hsl(0, 0%, 98%)", display:country? "none":""}}>
             <div className="filter">
-            <div className="search" style={{backgroundColor:props.mode=="light"?color.lightitem:color.darkitem,marginBottom:"3%"}}>
+            <div className="search" style={{backgroundColor:props.mode=="light"?color.lightitem:color.darkitem}}>
             &nbsp;
             &nbsp;
             

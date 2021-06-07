@@ -19,12 +19,11 @@ export default function Detail(props){
     const [borders,setBorders] = useState([])
     var url ="https://restcountries.eu/rest/v2/alpha/"
     useEffect(() => {
+        setBorders([])
         props.borders.forEach(element => {
-            console.log(url+element)
             fetch(url+element).then(response => response.json().then(res => setBorders(borders => [...borders,res.name])))
         });
     },[])
-    console.log(borders,"borders")
     return(
         <div className="Detail">
             <div className="back" >
@@ -38,7 +37,7 @@ export default function Detail(props){
             </div>
             <div className="country" >
                 <div className="flag">
-                    <img src={props.flag} style={{width:"100%",height:"100%",objectFit:"cover"}}/>
+                    <img src={props.flag} style={{width:"100%",height:"100%",objectFit:"fit"}}/>
                 
                 </div>
                 <div className="detail-section">
@@ -67,7 +66,7 @@ export default function Detail(props){
                     
                     <div className="bordercountries">
                         <p style={{color: props.mode=="dark"?color.lightitem:color.darkitem}}>
-                            Border Countries : {
+                            Border Countries : {" "}{
                                 borders.map((name)=> <button type="button" class="btn btn-sm" style={{marginRight:"4px", color:props.mode=="light"?"black":"white", backgroundColor:props.mode=="light"?color.lightitem:color.darkitem}} >{name}</button>)
                             }
                         </p>
