@@ -1,6 +1,6 @@
 .Detail{
     margin-top: 2%;
-    margin-left: 100px;
+    margin-left: 2%;
     
 }
 .country{
@@ -13,10 +13,17 @@
 .details{
     display: flex;
     flex-direction: row;
+    margin-right: 5%;
+    justify-content:space-between;
+}
+.detail-section{
+    width: 40%;
+    margin-right: 5%;
 }
 .flag{
-    width: 50%;
+    width: 40%;
     height: 50%;
+    
 }
 @media only screen and (max-width: 400px){
     .details{

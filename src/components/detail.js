@@ -63,9 +63,11 @@ export default function Detail(props){
 
                         </div>
                     </div>
+                    &nbsp;
+                    
                     <div className="bordercountries">
                         <p style={{color: props.mode=="dark"?color.lightitem:color.darkitem}}>
-                            Border Countries :{
+                            Border Countries : {
                                 borders.map((name)=> <button type="button" class="btn btn-sm" style={{marginRight:"4px", color:props.mode=="light"?"black":"white", backgroundColor:props.mode=="light"?color.lightitem:color.darkitem}} >{name}</button>)
                             }
                         </p>
